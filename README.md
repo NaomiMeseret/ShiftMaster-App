@@ -9,6 +9,48 @@
 
 > **A professional mobile application for managing employee shifts, attendance tracking, and workforce coordination. Built with Flutter and Node.js for reliability and performance.**
 
+## 👨‍💻 **My Contribution**
+
+I was responsible for implementing two critical backend features that form the foundation of the ShiftMaster platform:
+
+**🔐 Authentication & Security System**
+
+- **End-to-End Authentication**: Implemented complete authentication flow including registration, login, logout, and password change functionality
+- **JWT Token Management**: Built JWT-based authentication system with role-based access control (Admin/Employee) and secure token handling
+- **Password Security**:
+  - Password hashing with bcrypt (10 salt rounds) for secure storage
+  - Current password verification for password change operations
+  - Unique email and ID validation to prevent duplicate accounts
+- **Access Control**: Implemented status-based authentication that blocks pending and inactive users from accessing the system
+- **Security Features**:
+  - Auth middleware for JWT validation and user context injection
+  - Status-based authorization (pending, active, inactive, on leave)
+  - Admin role management with isAdmin flag for role-based permissions
+
+**👥 Employee & Shift Management System**
+
+- **Employee Management**: Designed and implemented comprehensive employee management system with full CRUD operations
+- **Admin Approval Workflow**: Built user approval system where new registrations require admin approval before activation
+  - Pending user retrieval endpoint for admin review
+  - Approve/reject functionality with status updates
+  - Initial admin account creation with validation
+- **Employee Status Management**: Created status tracking system (pending, active, inactive, on leave) with dedicated endpoints for status queries
+- **Shift Assignment System**: Built complete shift management with:
+  - Shift assignment to employees with date and shift type (morning/afternoon/night)
+  - Full CRUD operations for shift management
+  - Individual and bulk shift retrieval endpoints
+  - Attendance integration for clock in/out operations
+- **Technical Implementation**:
+  - Designed MongoDB schemas for Employee and Shift models with proper validation and relationships
+  - Implemented 13+ RESTful API endpoints following REST principles
+  - Built comprehensive error handling with appropriate HTTP status codes 
+  - Created cascading delete functionality (deleting employee also removes associated shifts)
+  - Structured backend code with separation of concerns (routes, models, utilities)
+
+**Architecture**: Both features follow clean architecture principles with clear separation between routes (API endpoints), models (MongoDB schemas), and utilities (database connection, network configuration) layers.
+
+
+---
 ## 📋 **Project Overview**
 
 ShiftMaster is a comprehensive workforce management solution designed to streamline employee scheduling and attendance tracking. The application features a clean, intuitive interface for both employees and administrators, making workforce management efficient and user-friendly.
